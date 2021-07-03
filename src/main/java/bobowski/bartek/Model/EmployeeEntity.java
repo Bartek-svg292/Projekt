@@ -2,7 +2,6 @@ package bobowski.bartek.Model;
 
 
 import lombok.*;
-import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 
@@ -24,9 +23,4 @@ public class EmployeeEntity {
     @Column(name = "salary")
     private int salary;
 
-    public EmployeeEntity(String name, String lastName, int salary) {
-        this.name = name;
-        this.lastName = lastName;
-        this.salary = salary;
-    }
 }

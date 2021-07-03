@@ -16,9 +16,9 @@ public class DepartmentEntity {
     @Id
     @Column(name = "depar_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long deparId;
+    private Long deparid;
     @Column(name = "depar_name")
-    private String deparName;
+    private String deparname;
 
 
 
