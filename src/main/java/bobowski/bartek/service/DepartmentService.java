@@ -1,7 +1,7 @@
-package bobowski.bartek.Service;
+package bobowski.bartek.service;
 
-import bobowski.bartek.DepartmentRepo;
-import bobowski.bartek.Model.DepartmentEntity;
+import bobowski.bartek.model.DepartmentEntity;
+import bobowski.bartek.repo.DepartmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +17,11 @@ public class DepartmentService {
         this.departmentRepo = departmentRepo;
     }
 
-    public DepartmentEntity addDepartment (DepartmentEntity departmentEntity){
+    public DepartmentEntity addDepartment(DepartmentEntity departmentEntity) {
         return departmentRepo.save(departmentEntity);
     }
 
-    public List<DepartmentEntity> findAllDepartments(){
+    public List<DepartmentEntity> findAllDepartments() {
         return departmentRepo.findAll();
     }
 
