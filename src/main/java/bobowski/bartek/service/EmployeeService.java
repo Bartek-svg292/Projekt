@@ -1,12 +1,10 @@
 package bobowski.bartek.service;
 
-import bobowski.bartek.repo.EmployeeRepo;
 import bobowski.bartek.dto.EmployeeDTO;
 import bobowski.bartek.dto.EmployeeSalaryDTO;
 import bobowski.bartek.entity.EmployeeEntity;
-import org.springframework.beans.factory.annotation.Autowired;
+import bobowski.bartek.repo.EmployeeRepo;
 import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
@@ -14,7 +12,6 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
-    @Autowired
     private final EmployeeRepo employeeRepo;
 
 
@@ -27,7 +24,7 @@ public class EmployeeService {
     }
 
 
-    public List<EmployeeDTO> findNameAndLastName() {
+    public List<EmployeeDTO> getNameAndLastName() {
 
         return employeeRepo.getNameAndLastName();
 

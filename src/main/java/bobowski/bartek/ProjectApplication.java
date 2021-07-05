@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProjectApplication implements CommandLineRunner {
 
-
     private final ScannerService scannerService;
 
     public ProjectApplication(ScannerService scannerService) {
@@ -25,7 +24,8 @@ public class ProjectApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        scannerService.run();
+     scannerService.run();
+
 
     }
 }

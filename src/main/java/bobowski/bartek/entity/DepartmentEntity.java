@@ -18,12 +18,12 @@ public class DepartmentEntity {
     private Long departmentId;
     private String departmentName;
 
+    public DepartmentEntity(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
     @Override
     public String toString() {
         return departmentName + " ";
-    }
-
-    public DepartmentEntity(String departmentName) {
-        this.departmentName = departmentName;
     }
 }

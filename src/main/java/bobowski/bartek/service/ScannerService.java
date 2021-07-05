@@ -67,12 +67,12 @@ public class ScannerService {
                                     employeeName + " " +
                                     employeeLastName +
                                     " o wynagordzeniu : " +
-                                    employeeSalary);
+                                    employeeSalary + "zł");
                             break;
 
                         case 2:
                             System.out.println("Wszyscy pracownicy zatrudnieni w firmie : " +
-                                    employeeService.findNameAndLastName() +
+                                    employeeService.getNameAndLastName() +
                                     employeeService.getSumOfSalary());
                             break;
                     }
