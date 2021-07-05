@@ -1,7 +1,7 @@
 package bobowski.bartek.service;
 
-import bobowski.bartek.model.DepartmentEntity;
-import bobowski.bartek.model.EmployeeEntity;
+import bobowski.bartek.entity.DepartmentEntity;
+import bobowski.bartek.entity.EmployeeEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
@@ -32,19 +32,22 @@ public class ScannerService {
 
             switch (firstChoice) {
                 case 1:
-                    System.out.println("Podaj nazwę działu jaki chcesz dodać");
+                    System.out.println("Podaj nazwę działu jaki chcesz dodać : ");
+                    String departmentName = scanner.next();
 
-                    String deparName = scanner.next();
-                    DepartmentEntity departmentEntity = new DepartmentEntity(deparName);
+                    DepartmentEntity departmentEntity = new DepartmentEntity(departmentName);
                     departmentService.addDepartment(departmentEntity);
 
-                    System.out.println("Dodałeś dział o nazwie : " + deparName);
-                    return;
-                case 2:
-                    System.out.println("Wszystkie działy aktualnie znajdujące się w naszej firmie : " + departmentService.findAllDepartments());
+                    System.out.println("Dodałeś dział o nazwie : " + departmentName);
 
-                    System.out.println("Nacisnij 1 aby dodać pracownika (imie, nazwisko, pensja)");
+                    break;
+                case 2:
+                    System.out.println("Wszystkie działy aktualnie znajdujące się w naszej firmie : " +
+                            departmentService.findAllDepartments());
+
+                    System.out.println("Nacisnij 1 aby dodać pracownika");
                     System.out.println("Nacisnij 2 aby wyświetlić listę pracowników");
+
 
                     int secondChoice = scanner.nextInt();
 
@@ -65,14 +68,14 @@ public class ScannerService {
                                     employeeLastName +
                                     " o wynagordzeniu : " +
                                     employeeSalary);
+                            break;
 
                         case 2:
                             System.out.println("Wszyscy pracownicy zatrudnieni w firmie : " +
                                     employeeService.findNameAndLastName() +
                                     employeeService.getSumOfSalary());
-
+                            break;
                     }
-                    break;
             }
 
 

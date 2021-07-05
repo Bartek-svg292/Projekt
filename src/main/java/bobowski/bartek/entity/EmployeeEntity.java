@@ -1,4 +1,4 @@
-package bobowski.bartek.model;
+package bobowski.bartek.entity;
 
 
 import lombok.*;
@@ -10,18 +10,14 @@ import java.math.BigInteger;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "employee")
-@Table(name = "employee")
+@Table
 public class EmployeeEntity {
 
     @Id
-    @Column(name = "employee_id", updatable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column(name = "name")
+    private Long employeeId;
     private String name;
-    @Column(name = "lastname")
     private String lastName;
-    @Column(name = "salary")
     private BigInteger salary;
 
     public EmployeeEntity(String name, String lastName, BigInteger salary) {

@@ -7,7 +7,7 @@ import java.math.BigInteger;
 
 @Data
 @AllArgsConstructor
-public class SalaryDTO {
+public class EmployeeSalaryDTO {
 
     private BigInteger salary;
 
@@ -15,6 +15,6 @@ public class SalaryDTO {
     public String toString() {
         return
                 " Suma wynagrodzeń = " + salary +
-                        " ";
+                        " zł ";
     }
 }

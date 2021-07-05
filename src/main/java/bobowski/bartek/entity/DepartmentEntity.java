@@ -1,4 +1,4 @@
-package bobowski.bartek.model;
+package bobowski.bartek.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,15 +9,13 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "department")
+@Entity(name = "department")
+@Table
 public class DepartmentEntity {
 
     @Id
-    @Column(name = "depar_id", updatable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
-    @Column(name = "depar_name")
     private String departmentName;
 
     @Override

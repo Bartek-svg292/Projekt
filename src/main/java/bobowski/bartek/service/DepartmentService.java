@@ -1,6 +1,6 @@
 package bobowski.bartek.service;
 
-import bobowski.bartek.model.DepartmentEntity;
+import bobowski.bartek.entity.DepartmentEntity;
 import bobowski.bartek.repo.DepartmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
