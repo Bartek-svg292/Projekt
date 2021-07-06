@@ -24,6 +24,13 @@ public class EmployeeService {
     }
 
 
+    public List<EmployeeEntity> findAllEmployess() {
+
+        return employeeRepo.findAll();
+
+    }
+
+
     public List<EmployeeDTO> getNameAndLastName() {
 
         return employeeRepo.getNameAndLastName();

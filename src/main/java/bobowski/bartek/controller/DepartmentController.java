@@ -3,6 +3,7 @@ package bobowski.bartek.controller;
 import bobowski.bartek.dto.DepartmentDTO;
 import bobowski.bartek.entity.DepartmentEntity;
 import bobowski.bartek.repo.DepartmentRepo;
+import bobowski.bartek.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,16 +16,16 @@ import java.util.List;
 public class DepartmentController {
 
     @Autowired
-    private DepartmentRepo departmentRepo;
+    private DepartmentService departmentService;
 
     @PostMapping("/addDepartment")
     public DepartmentEntity addDepartment(@RequestBody DepartmentDTO departmentDTO) {
-        return departmentRepo.save(departmentDTO.getDepartmentEntity());
+        return departmentService.addDepartment(departmentDTO.getDepartmentEntity());
     }
 
     @GetMapping("/departments")
     public List<DepartmentEntity> findAllDepartments() {
-        return departmentRepo.findAll();
+        return departmentService.findAllDepartments();
     }
 
 }

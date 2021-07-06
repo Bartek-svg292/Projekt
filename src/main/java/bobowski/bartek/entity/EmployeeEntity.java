@@ -16,7 +16,7 @@ import java.math.BigInteger;
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeId;
     private String name;
     private String lastName;

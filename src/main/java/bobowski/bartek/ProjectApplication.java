@@ -26,6 +26,5 @@ public class ProjectApplication implements CommandLineRunner {
 
      scannerService.run();
 
-
     }
 }

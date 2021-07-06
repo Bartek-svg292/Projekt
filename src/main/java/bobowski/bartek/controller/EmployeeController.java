@@ -4,6 +4,7 @@ import bobowski.bartek.dto.EmployeeDTO;
 import bobowski.bartek.dto.EmployeeSalaryDTO;
 import bobowski.bartek.entity.EmployeeEntity;
 import bobowski.bartek.repo.EmployeeRepo;
+import bobowski.bartek.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,21 +17,21 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeRepo employeeRepo;
+    private EmployeeService employeeService;
 
     @GetMapping("/employees")
-    public List<EmployeeDTO> findAllEmployees() {
-        return employeeRepo.getNameAndLastName();
+    public List<EmployeeEntity> findAllEmployees() {
+        return employeeService.findAllEmployess();
     }
 
     @GetMapping("/salary")
     public EmployeeSalaryDTO getSumOfSalary() {
-        return employeeRepo.getSalary();
+        return employeeService.getSumOfSalary();
     }
 
     @PostMapping("/addEmployee")
     public EmployeeEntity addEmployee(@RequestBody EmployeeDTO employee) {
-        return employeeRepo.save(employee.getEmployeeEntity());
+        return employeeService.addEmployee(employee.getEmployeeEntity());
     }
 
 
