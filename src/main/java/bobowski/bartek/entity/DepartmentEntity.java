@@ -24,6 +24,6 @@ public class DepartmentEntity {
 
     @Override
     public String toString() {
-        return departmentName + " ";
+        return departmentName ;
     }
 }

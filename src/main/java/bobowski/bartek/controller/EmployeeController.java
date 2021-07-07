@@ -5,12 +5,10 @@ import bobowski.bartek.dto.EmployeeSalaryDTO;
 import bobowski.bartek.entity.EmployeeEntity;
 import bobowski.bartek.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -31,6 +29,11 @@ public class EmployeeController {
     @PostMapping("/addEmployee")
     public EmployeeEntity addEmployee(@RequestBody EmployeeDTO employee) {
         return employeeService.addEmployee(employee.getEmployeeEntity());
+    }
+
+    @RequestMapping("/employee/{id}")
+    public Optional<EmployeeEntity> findEmployeeById(@PathVariable Long id){
+            return employeeService.findById(id);
     }
 
 

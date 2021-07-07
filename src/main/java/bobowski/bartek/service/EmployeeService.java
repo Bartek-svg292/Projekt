@@ -7,6 +7,7 @@ import bobowski.bartek.repo.EmployeeRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -41,6 +42,10 @@ public class EmployeeService {
 
         return employeeRepo.getSalary();
 
+    }
+
+    public Optional<EmployeeEntity> findById(Long id){
+        return employeeRepo.findById(id);
     }
 
 

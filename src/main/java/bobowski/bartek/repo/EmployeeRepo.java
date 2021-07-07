@@ -11,13 +11,12 @@ import java.util.List;
 
 
 @Repository
-public interface EmployeeRepo extends JpaRepository<EmployeeEntity, String> {
+public interface EmployeeRepo extends JpaRepository<EmployeeEntity, Long> {
 
-    @Query(value = "SELECT NEW bobowski.bartek.dto.EmployeeDTO (e.name, e.lastName) FROM employee e")
+    @Query(value = "SELECT NEW bobowski.bartek.dto.EmployeeDTO (e.name, e.lastName, e.salary) FROM employee e")
     List<EmployeeDTO> getNameAndLastName();
 
     @Query(value = "SELECT NEW bobowski.bartek.dto.EmployeeSalaryDTO (sum(e.salary)) FROM employee e")
     EmployeeSalaryDTO getSalary();
-
 
 }

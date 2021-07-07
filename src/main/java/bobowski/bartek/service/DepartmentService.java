@@ -1,10 +1,12 @@
 package bobowski.bartek.service;
 
 import bobowski.bartek.entity.DepartmentEntity;
+import bobowski.bartek.entity.EmployeeEntity;
 import bobowski.bartek.repo.DepartmentRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DepartmentService {
@@ -22,6 +24,11 @@ public class DepartmentService {
     public List<DepartmentEntity> findAllDepartments() {
         return departmentRepo.findAll();
     }
+
+    public Optional<DepartmentEntity> findById(Long id){
+        return departmentRepo.findById(id);
+    }
+
 
 
 }
