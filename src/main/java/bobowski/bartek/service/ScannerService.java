@@ -2,6 +2,7 @@ package bobowski.bartek.service;
 
 import bobowski.bartek.entity.DepartmentEntity;
 import bobowski.bartek.entity.EmployeeEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
@@ -11,13 +12,11 @@ import java.util.Scanner;
 @Service
 public class ScannerService {
 
-    private final DepartmentService departmentService;
-    private final EmployeeService employeeService;
+    @Autowired
+    private DepartmentService departmentService;
+    @Autowired
+    private EmployeeService employeeService;
 
-    public ScannerService(DepartmentService departmentService, EmployeeService employeeService) {
-        this.departmentService = departmentService;
-        this.employeeService = employeeService;
-    }
 
 
     public void run() {

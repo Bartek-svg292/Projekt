@@ -1,6 +1,5 @@
 package bobowski.bartek.controller;
 
-import bobowski.bartek.dto.DepartmentDTO;
 import bobowski.bartek.entity.DepartmentEntity;
 import bobowski.bartek.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,8 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping("/addDepartment")
-    public DepartmentEntity addDepartment(@RequestBody DepartmentDTO department) {
-        return departmentService.addDepartment(department.getDepartmentEntity());
+    public DepartmentEntity addDepartment(@RequestBody DepartmentEntity department) {
+        return departmentService.addDepartment(department);
     }
 
     @GetMapping("/departments")

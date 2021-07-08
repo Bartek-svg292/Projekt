@@ -14,7 +14,6 @@ public class EmployeeDTO {
     private String name;
     private String lastName;
     private BigInteger salary;
-    private EmployeeEntity employeeEntity;
 
 
     public EmployeeDTO(String name, String lastName, BigInteger salary) {

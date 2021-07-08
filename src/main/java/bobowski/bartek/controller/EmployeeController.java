@@ -1,6 +1,5 @@
 package bobowski.bartek.controller;
 
-import bobowski.bartek.dto.EmployeeDTO;
 import bobowski.bartek.dto.EmployeeSalaryDTO;
 import bobowski.bartek.entity.EmployeeEntity;
 import bobowski.bartek.service.EmployeeService;
@@ -27,8 +26,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmployee")
-    public EmployeeEntity addEmployee(@RequestBody EmployeeDTO employee) {
-        return employeeService.addEmployee(employee.getEmployeeEntity());
+    public EmployeeEntity addEmployee(@RequestBody EmployeeEntity employee) {
+        return employeeService.addEmployee(employee);
     }
 
     @RequestMapping("/employee/{id}")

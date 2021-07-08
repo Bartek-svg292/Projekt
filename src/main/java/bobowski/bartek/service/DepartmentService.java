@@ -1,7 +1,6 @@
 package bobowski.bartek.service;
 
 import bobowski.bartek.entity.DepartmentEntity;
-import bobowski.bartek.entity.EmployeeEntity;
 import bobowski.bartek.repo.DepartmentRepo;
 import org.springframework.stereotype.Service;
 
